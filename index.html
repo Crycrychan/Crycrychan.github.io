@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lichess.cum</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+body{
+    background-color: rgb(143, 143, 160);
+}
+a{
+    color:rgb(168, 222, 222);
+}
+a:hover{
+    color:red;
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size:50px;
+    text-align:center;
+    padding:50px;
+    color:whitesmoke;
+}
+#selfpic{
+    width:25%;
+    margin-top:50px;
+    float:left;
+    margin-left:5%;
+}
+#main_text{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top:100px;
+    margin-left:10%;
+    margin-right:20%;
+    width:40%;
+    /*background-color:aqua;*/
+    font-size:40px;
+    float:right;
+}
+#clock{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:white;
+    font-size:35px;
+    float:right;
+    margin-top:200px;
+    margin-right:5%;
+}
+</style>
+</head>
+
+<body onload="ticktock()">
+<h1>Shih-En, Chou</h1>
+
+<div id="selfpic">
+<img src="se_chou.jpg" style="width:100%" alt="a picture of me">
+</div>
+
+<div id="main_text">
+<p>
+    I, Shih-En, Chou(周世恩) graduated from <a href="https://www2.ck.tp.edu.tw/">Jianguo High School</a> in 2021. 
+    I am currently enrolled in National Taiwan University, majoring in <a href="https://web.ee.ntu.edu.tw/">Electrical Engineering.</a>
+    <hr>
+    I'm an amatuer composer, making music using <a href="https://www.image-line.com/fl-studio/"> FL studio</a>.<br>
+    I'm always listening to music on <a href="https://soundcloud.com/">Soundcloud</a>.<br>
+    Sometimes I play computer games. I purchase games from <a href="https://store.steampowered.com/">Steam</a>.
+</p>
+</div>
+
+<script>
+function ticktock(){
+    const now=new Date();
+    let mth=now.getMonth();
+    mth++;
+    let d=now.getDate();
+    let y=now.getFullYear();
+    let h=now.getHours();
+    let min=now.getMinutes();
+    if(min<10)min="0"+min;
+    let s=now.getSeconds();
+    if(s<10)s="0"+s;
+    document.getElementById("clock").innerHTML=mth+"-"+d+"-"+y+" "+h+":"+min+":"+s;
+    setTimeout(ticktock, 1000);
+}
+</script>
+<p id="clock">
+    time
+</p>
+
+<audio autoplay loop>
+    <source src="Synthion - Until Next Time.mp3" type="audio/mpeg">
+</audio>
+
+<div style="margin-top: 925px;text-align:center;">
+<p style="font-size:30px;color:rgb(101, 101, 101)">
+background music by <a href="https://synthion.bandcamp.com/music">Synthion</a>
+</p>
+</div>
+
+</body>
+</html>
